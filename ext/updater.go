@@ -392,3 +392,8 @@ func (u *Updater) StartServer(opts WebhookOpts) error {
 
 	return nil
 }
+// GetServer exposes the webserver to use for other purposes.
+// Can only be used with WEBHOOKS.
+func (u *Updater) GetServer() *http.ServeMux {
+	return u.serveMux
+}
